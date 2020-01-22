@@ -1,0 +1,84 @@
+# This file is auto-generated from the current state of the database. Instead
+# of editing this file, please use the migrations feature of Active Record to
+# incrementally modify your database, and then regenerate this schema definition.
+#
+# Note that this schema.rb definition is the authoritative source for your
+# database schema. If you need to create the application database on another
+# system, you should be using db:schema:load, not running all the migrations
+# from scratch. The latter is a flawed and unsustainable approach (the more migrations
+# you'll amass, the slower it'll run and the greater likelihood for issues).
+#
+# It's strongly recommended that you check this file into your version control system.
+
+ActiveRecord::Schema.define(version: 2020_01_22_093152) do
+
+  # These are extensions that must be enabled in order to support this database
+  enable_extension "plpgsql"
+
+  create_table "cities", force: :cascade do |t|
+    t.string "name"
+    t.datetime "created_at", null: false
+    t.datetime "updated_at", null: false
+  end
+
+  create_table "city_sports", force: :cascade do |t|
+    t.bigint "city_id"
+    t.bigint "sport_id"
+    t.integer "number_of_boxes"
+    t.integer "number_of_players"
+    t.datetime "created_at", null: false
+    t.datetime "updated_at", null: false
+    t.index ["city_id"], name: "index_city_sports_on_city_id"
+    t.index ["sport_id"], name: "index_city_sports_on_sport_id"
+  end
+
+  create_table "matches", force: :cascade do |t|
+    t.bigint "city_sport_id"
+    t.date "played_on"
+    t.integer "result"
+    t.datetime "created_at", null: false
+    t.datetime "updated_at", null: false
+    t.index ["city_sport_id"], name: "index_matches_on_city_sport_id"
+  end
+
+  create_table "matches_users", id: false, force: :cascade do |t|
+    t.bigint "match_id"
+    t.bigint "user_id"
+    t.index ["match_id"], name: "index_matches_users_on_match_id"
+    t.index ["user_id"], name: "index_matches_users_on_user_id"
+  end
+
+  create_table "sports", force: :cascade do |t|
+    t.string "name"
+    t.datetime "created_at", null: false
+    t.datetime "updated_at", null: false
+  end
+
+  create_table "user_city_sports", force: :cascade do |t|
+    t.bigint "user_id"
+    t.bigint "city_sport_id"
+    t.integer "monthly_points"
+    t.integer "total_points"
+    t.integer "level"
+    t.boolean "is_waiting"
+    t.boolean "is_active"
+    t.datetime "created_at", null: false
+    t.datetime "updated_at", null: false
+    t.index ["city_sport_id"], name: "index_user_city_sports_on_city_sport_id"
+    t.index ["user_id"], name: "index_user_city_sports_on_user_id"
+  end
+
+  create_table "users", force: :cascade do |t|
+    t.string "first_name"
+    t.string "last_name"
+    t.integer "contact_number"
+    t.boolean "role"
+    t.string "email"
+    t.string "password"
+    t.bigint "city_id"
+    t.datetime "created_at", null: false
+    t.datetime "updated_at", null: false
+    t.index ["city_id"], name: "index_users_on_city_id"
+  end
+
+end
