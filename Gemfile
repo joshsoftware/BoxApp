@@ -21,7 +21,6 @@ gem 'puma', '~> 3.11'
 
 gem 'rb-readline'
 gem 'jwt', '~> 2.2', '>= 2.2.1'
-gem "versionist"
 
 # Use Capistrano for deployment
 # gem 'capistrano-rails', group: :development

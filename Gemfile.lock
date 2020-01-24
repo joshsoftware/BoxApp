@@ -172,14 +172,9 @@ GEM
     tzinfo (1.2.6)
       thread_safe (~> 0.1)
     unicode-display_width (1.6.1)
-    versionist (2.0.1)
-      activesupport (>= 3)
-      railties (>= 3)
-      yard (~> 0.9.20)
     websocket-driver (0.7.1)
       websocket-extensions (>= 0.1.0)
     websocket-extensions (0.1.4)
-    yard (0.9.24)
 
 PLATFORMS
   ruby
@@ -201,7 +196,6 @@ DEPENDENCIES
   spring
   spring-watcher-listen (~> 2.0.0)
   tzinfo-data
-  versionist
 
 RUBY VERSION
    ruby 2.6.5p114
