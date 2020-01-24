@@ -10,7 +10,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 2020_01_22_093152) do
+ActiveRecord::Schema.define(version: 2020_01_24_081550) do
 
   # These are extensions that must be enabled in order to support this database
   enable_extension "plpgsql"
@@ -30,6 +30,21 @@ ActiveRecord::Schema.define(version: 2020_01_22_093152) do
     t.datetime "updated_at", null: false
     t.index ["city_id"], name: "index_city_sports_on_city_id"
     t.index ["sport_id"], name: "index_city_sports_on_sport_id"
+  end
+
+  create_table "level_city_sports", force: :cascade do |t|
+    t.bigint "level_id"
+    t.bigint "city_sport_id"
+    t.datetime "created_at", null: false
+    t.datetime "updated_at", null: false
+    t.index ["city_sport_id"], name: "index_level_city_sports_on_city_sport_id"
+    t.index ["level_id"], name: "index_level_city_sports_on_level_id"
+  end
+
+  create_table "levels", force: :cascade do |t|
+    t.string "name"
+    t.datetime "created_at", null: false
+    t.datetime "updated_at", null: false
   end
 
   create_table "matches", force: :cascade do |t|
@@ -59,12 +74,13 @@ ActiveRecord::Schema.define(version: 2020_01_22_093152) do
     t.bigint "city_sport_id"
     t.integer "monthly_points"
     t.integer "total_points"
-    t.integer "level"
     t.boolean "is_waiting"
     t.boolean "is_active"
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
+    t.bigint "level_city_sports_id"
     t.index ["city_sport_id"], name: "index_user_city_sports_on_city_sport_id"
+    t.index ["level_city_sports_id"], name: "index_user_city_sports_on_level_city_sports_id"
     t.index ["user_id"], name: "index_user_city_sports_on_user_id"
   end
 
@@ -81,4 +97,5 @@ ActiveRecord::Schema.define(version: 2020_01_22_093152) do
     t.index ["city_id"], name: "index_users_on_city_id"
   end
 
+  add_foreign_key "user_city_sports", "level_city_sports", column: "level_city_sports_id"
 end
