@@ -20,7 +20,7 @@ gem 'puma', '~> 3.11'
 # gem 'mini_magick', '~> 4.8'
 
 gem 'rb-readline'
-gem 'devise_token_auth', '~> 1.1', '>= 1.1.3'
+gem 'jwt', '~> 2.2', '>= 2.2.1'
 gem "versionist"
 
 # Use Capistrano for deployment
