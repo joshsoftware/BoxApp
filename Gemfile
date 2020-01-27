@@ -20,6 +20,10 @@ gem 'puma', '~> 3.11'
 # gem 'mini_magick', '~> 4.8'
 
 gem 'rb-readline'
+# Use Json Web Token (JWT) for token based authentication
+gem 'jwt', '~> 2.2', '>= 2.2.1'
+# Use ActiveModel has_secure_password
+gem 'bcrypt', '~> 3.1', '>= 3.1.13'
 
 # Use Capistrano for deployment
 # gem 'capistrano-rails', group: :development
