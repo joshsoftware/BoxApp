@@ -15,7 +15,7 @@ module Api
       def create
         puts "in create"
         usr = params['user']
-        User.create(first_name: usr['first_name'], last_name: usr['last_name'], contact_number: usr['contact_number'], role: false, email: usr['email'], password: usr['password'], city_id: 1)
+        User.create(first_name: usr['first_name'], last_name: usr['last_name'], contact_number: usr['contact_number'], role: false, email: usr['email'], password: usr['password'], city_id: usr['city_id'])
       end
     end
   end
