@@ -4,17 +4,13 @@ module Api
       before_action :authorize_request, except: :login
 
       def login
-        puts "#{params["user"]["email"]} params---"
         @user = User.find_by_email(params["user"]["email"])
-        puts "#{@user.first_name} user---"
         if @user&.authenticate(params["user"]["password"])
           token = JsonWebToken.encode(user_id: @user.id)
-          puts "in if token-> #{token}"
           time = Time.now + 24.hours.to_i
           render json: { token: token, exp: time.strftime("%m-%d-%Y %H:%M"),
                          email: @user.email }, status: :ok
         else
-          puts "in else"
           render json: { error: 'unauthorized' }, status: :unauthorized
         end
       end
