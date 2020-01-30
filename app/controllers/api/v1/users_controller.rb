@@ -10,9 +10,16 @@ module Api
         user = JSON.parse(json_string, object_class: User)
       end
 
+      def confirm
+        @usr = User.last
+        UserMailer.email_confirmation(@usr).deliver_now
+
+      end
+
       def create
         usr = params['user']
-        if User.create(first_name: usr['first_name'], last_name: usr['last_name'], contact_number: usr['contact_number'], role: false, email: usr['email'], password: usr['password'], city_id: usr['city_id'])
+        if User.create!(first_name: usr['first_name'], last_name: usr['last_name'], contact_number: usr['contact_number'], role: false, email: usr['email'], password: usr['password'], city_id: usr['city_id'])
+          puts "in if #{usr}"
           user_obj = User.find_by_email(usr['email'])
           token = JsonWebToken.encode(user_id: user_obj.id)
           time = Time.now + 24.hours.to_i
