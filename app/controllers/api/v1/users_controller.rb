@@ -10,10 +10,17 @@ module Api
         @user.password_confirmation = usr["password_confirmation"]
         @user.confirmed_at = DateTime.now
         if @user.save
-          puts "done"# render :create
+          token = JsonWebToken.encode(user_id: @user.id)
+          time = Time.now + 24.hours.to_i
+          render json: { token: token, exp: time.strftime("%m-%d-%Y %H:%M"),
+                         email: @user.email }, status: :ok
         else
-          puts "nope"# head(:unprocessable_entity)
+          render json: { error: 'unauthorized' }, status: :unauthorized
         end
+        #   puts "done"# render :create
+        # else
+        #   puts "nope"# head(:unprocessable_entity)
+        # end
       end
 
       # private
