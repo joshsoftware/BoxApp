@@ -5,9 +5,11 @@ module Api
         # @user = User.new(user_params)
         puts params
         usr = params["user"]
-        @user = User.new(email: usr["email"], password: usr["password"], password_confirmation: usr["password_confirmation"])
-
-        if @user.save!
+        @user = User.find_by(confirmation_token: usr["confirmation_token"])
+        @user.password = usr["password"]
+        @user.password_confirmation = usr["password_confirmation"]
+        @user.confirmed_at = DateTime.now
+        if @user.save
           puts "done"# render :create
         else
           puts "nope"# head(:unprocessable_entity)
