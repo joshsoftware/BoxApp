@@ -1,13 +1,15 @@
 # BoxApp
-
+<h4> Ruby Version - 2.6.5 </h4>
+<h4> Rails Version - 6.0 </h4>
 
 # Postgres Database Installation
 
-1. Add Enable PostgreSQL Apt Repository </br>
+1. Add PostgreSQL Apt Repository </br>
   <code> sudo apt-get install wget ca-certificates </code></br>
   <code> wget --quiet -O - https://www.postgresql.org/media/keys/ACCC4CF8.asc | sudo apt-key add - </code>
 2. Add the repository to your system </br>
-  <code> sudo sh -c 'echo "deb http://apt.postgresql.org/pub/repos/apt/ `lsb_release -cs`-pgdg main" >> /etc/apt/sources.list.d/pgdg.list' </code>
+  <code> RELEASE=$(lsb_release -cs)
+echo "deb http://apt.postgresql.org/pub/repos/apt/ ${RELEASE}"-pgdg main | sudo tee  /etc/apt/sources.list.d/pgdg.list </code>
   
 3. Install PostgreSQL </br>
   <code> sudo apt-get update </code></br>
