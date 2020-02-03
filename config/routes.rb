@@ -5,6 +5,7 @@ Rails.application.routes.draw do
       devise_for :users #, :controllers => { registrations: 'registrations' }
       resources :sessions, only: [:create, :destroy]
       resource :user, only: [:show, :update, :create]
+      post '/setpwd', to: 'users#setpwd'
       # resources :confirmations, only: [:update, :show]
     end
   end
