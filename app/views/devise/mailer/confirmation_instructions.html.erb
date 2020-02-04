@@ -2,5 +2,5 @@
 
 <p>You can confirm your account email through the link below:</p>
 
-<%= link_to 'CLICK HERE', api_v1_confirm_link_url %>
+<%= link_to 'CLICK HERE', api_v1_confirm_link_url("confirmation_token"=>@token) %>
 
