@@ -3,6 +3,14 @@ module Api
     class UsersController < ApplicationController
       def create
         # @user = User.new(user_params)
+        
+        #   puts "done"# render :create
+        # else
+        #   puts "nope"# head(:unprocessable_entity)
+        # end
+      end
+
+      def setpwd
         puts params
         usr = params["user"]
         @user = User.find_by(confirmation_token: usr["confirmation_token"])
@@ -17,10 +25,6 @@ module Api
         else
           render json: { error: 'unauthorized' }, status: :unauthorized
         end
-        #   puts "done"# render :create
-        # else
-        #   puts "nope"# head(:unprocessable_entity)
-        # end
       end
 
       # private
