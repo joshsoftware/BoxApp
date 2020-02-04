@@ -15,6 +15,7 @@ module Api
         @level_id = Level.find_by(name: @level_name)
         @level_city_sports_id = LevelCitySport.where(city_sport_id: @city_sport_id, level_id: @level_id)
         UserCitySport.create!(user_id: @user_id, city_sport_id: @city_sport_id.id,level_city_sports_id: @level_city_sports_id)
+        render json: {status: "ok"}
       end
     end
   end
