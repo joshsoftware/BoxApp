@@ -1,0 +1,7 @@
+require 'test_helper'
+
+class LevelSportControllerTest < ActionDispatch::IntegrationTest
+  # test "the truth" do
+  #   assert true
+  # end
+end
