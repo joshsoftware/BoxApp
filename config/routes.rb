@@ -6,6 +6,7 @@ Rails.application.routes.draw do
       resources :sessions, only: [:create, :destroy]
       resource :user, only: [:show, :update, :create]
       post '/setpwd', to: 'users#setpwd'
+      get 'confirm_link', to: 'mailers#confirm_link'
       # resources :confirmations, only: [:update, :show]
     end
   end
