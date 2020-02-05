@@ -1,4 +1,9 @@
 # BoxApp
+
+[![Maintainability](https://api.codeclimate.com/v1/badges/3595d9ea6ac4c6f5512c/maintainability)](https://codeclimate.com/github/MayurDeshmukh10/BoxApp/maintainability)
+
+[![Test Coverage](https://api.codeclimate.com/v1/badges/3595d9ea6ac4c6f5512c/test_coverage)](https://codeclimate.com/github/MayurDeshmukh10/BoxApp/test_coverage)
+
 <h4> Ruby Version - 2.6.5 </h4>
 <h4> Rails Version - 6.0 </h4>
 
