@@ -1,22 +1,18 @@
-require 'jwt'
-$hmac_secret = ENV["JWT_SECRET"]
 module Api
   module V1
-    class LevelSportsController < ApplicationController
+    class Api::V1::LevelSportsController < ApplicationController
       def create
-        @token_array = JWT.decode(params['token'],$hmac_secret,true,{algorithm: 'HS256'})
-        @token = @token_array[0]
+        @token = JsonWebToken.decode(params['token'])
         @user_id = @token["user_id"]
         @user = User.where(id: @user_id)
         @city_id = @user.first.city_id
         @sport_id = params["sport_id"]
         @city_sport_id = CitySport.find_by(city_id: @city_id, sport_id: @sport_id)
-        @level_name = params["level_name"]
-        @level_id = Level.find_by(name: @level_name)
-        @level_city_sports_id = LevelCitySport.where(city_sport_id: @city_sport_id, level_id: @level_id)
-        UserCitySport.create!(user_id: @user_id, city_sport_id: @city_sport_id.id,level_city_sports_id: @level_city_sports_id)
+        @level_id = params["level_id"]
+        @level_city_sports = LevelCitySport.where(city_sport_id: @city_sport_id.id, level_id: @level_id)
+        UserCitySport.create(user_id: @user_id, city_sport_id: @city_sport_id.id,level_city_sports_id: @level_city_sports.ids[0])
         render json: {status: "ok"}
-      end
+      end 
     end
   end
 end
