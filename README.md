@@ -4,9 +4,3 @@
 
 [![Test Coverage](https://api.codeclimate.com/v1/badges/3595d9ea6ac4c6f5512c/test_coverage)](https://codeclimate.com/github/MayurDeshmukh10/BoxApp/test_coverage)
 
-Add these to /home/yourusername/.bashrc
-
- * export LEVEL_ME_UP_USERNAME="<username>"
- * export LEVEL_ME_UP_PASSWORD="<password>"
- * export POSTGRES_11_PORT="<port number>"
- * export LEVEL_ME_UP_DEV="<database name>"
