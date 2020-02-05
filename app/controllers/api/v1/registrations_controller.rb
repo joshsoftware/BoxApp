@@ -2,11 +2,6 @@ module Api
   module V1
     class RegistrationsController < Devise::RegistrationsController
 
-      # def create
-      #   puts "IN CREATE"
-
-      # end
-
       private
 
       def sign_up_params
