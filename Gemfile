@@ -35,7 +35,9 @@ gem "bootsnap", ">= 1.1.0", require: false
 group :development, :test do
   # Call 'byebug' anywhere in the code to stop execution and get a debugger console
   gem "byebug", platforms: %i[mri mingw x64_mingw]
+  # Utility to install, configure, and extend Git hooks
   gem "overcommit", "~> 0.52.1"
+  # Automatic Ruby code style checking tool. Aims to enforce the community-driven Ruby Style Guide.
   gem "rubocop", "~> 0.79.0", require: false
 end
 
