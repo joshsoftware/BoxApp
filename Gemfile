@@ -6,7 +6,7 @@ git_source(:github) {|repo| "https://github.com/#{repo}.git" }
 ruby "2.6.5"
 
 # Bundle edge Rails instead: gem 'rails', github: 'rails/rails'
-gem "rails", "~> 5.2.4", ">= 5.2.4.1"
+gem "rails", "~> 6.0", ">= 6.0.2.1"
 # Use postgresql as the database for Active Record
 gem "pg", "~> 1.2", ">= 1.2.2"
 # Use Puma as the app server
@@ -39,6 +39,16 @@ group :development, :test do
   gem "overcommit", "~> 0.52.1"
   # Automatic Ruby code style checking tool. Aims to enforce the community-driven Ruby Style Guide.
   gem "rubocop", "~> 0.79.0", require: false
+  # Strategies for cleaning databases. Can be used to ensure a clean slate for testing.
+  gem "database_cleaner", "~> 1.7"
+  # Provides integration between factory_bot and rails 4.2 or newer
+  gem "factory_bot_rails", "~> 5.1", ">= 5.1.1"
+  # Faker, a port of Data::Faker from Perl, is used to easily generate fake data.
+  gem "faker", "~> 2.10", ">= 2.10.1"
+  # BDD for Ruby
+  gem "rspec", "~> 3.9"
+  # A testing framework for Rails 3+.
+  gem "rspec-rails", "~> 3.9"
 end
 
 group :development do
@@ -46,6 +56,12 @@ group :development do
   # Spring speeds up development by keeping your application running in the background. Read more: https://github.com/rails/spring
   gem "spring"
   gem "spring-watcher-listen", "~> 2.0.0"
+end
+
+group :test do
+  # Code coverage for Ruby with a powerful configuration library and
+  # automatic merging of coverage across test suites
+  gem "simplecov", require: false
 end
 
 # Windows does not include zoneinfo files, so bundle the tzinfo-data gem
