@@ -40,6 +40,7 @@ group :development, :test do
   gem 'faker', '~> 2.10', '>= 2.10.1'
   gem 'rspec', '~> 3.9'
   gem 'rspec-rails', '~> 3.9'
+  gem 'dotenv-rails'
 end
 
 group :development do

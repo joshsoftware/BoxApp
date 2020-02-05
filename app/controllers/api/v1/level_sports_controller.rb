@@ -1,5 +1,5 @@
 require 'jwt'
-$hmac_secret = "your-256-bit-secret"
+$hmac_secret = ENV["JWT_SECRET"]
 module Api
   module V1
     class LevelSportsController < ApplicationController
