@@ -9,6 +9,7 @@ Rails.application.routes.draw do
       resource :user, only: %i[show update create]
       post "/setpwd", to: "users#setpwd"
       get "confirm_link", to: "mailers#confirm_link"
+      post "/level_sports", to: "level_sports#create"
       # resources :confirmations, only: [:update, :show]
     end
   end
