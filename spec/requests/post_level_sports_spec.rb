@@ -1,6 +1,6 @@
 require 'rails_helper'
 
-describe "post a question route", :type => :request do
+describe "post a level and sport", :type => :request do
     
     before do
         FactoryBot.create(:user)
