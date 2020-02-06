@@ -10,6 +10,8 @@ Rails.application.routes.draw do
       post "/setpwd", to: "users#setpwd"
       get "confirm_link", to: "mailers#confirm_link"
       post "/level_sports", to: "level_sports#create"
+      resources :city_sports
+      post "/city_sports/display", to: "city_sports#displaysports"
       # resources :confirmations, only: [:update, :show]
     end
   end
