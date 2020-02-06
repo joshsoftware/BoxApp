@@ -1,6 +1,6 @@
 require 'rails_helper'
 
-describe "get all levels", :type => :request do
+describe "get all cities", :type => :request do
     
     before do
       get '/api/v1/cities'
