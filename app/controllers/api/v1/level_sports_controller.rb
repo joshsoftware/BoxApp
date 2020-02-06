@@ -6,8 +6,8 @@ module Api
       def create
         @token = JsonWebToken.decode(params["token"])
         @user_id = @token["user_id"]
-        @user = User.where(id: @user_id)
-        @city_id = @user.first.city_id
+        @user = User.find(@user_id)
+        @city_id = @user.city_id
         @sport_id = params["sport_id"]
         @city_sport_id = CitySport.find_by(city_id: @city_id, sport_id: @sport_id)
         @level_id = params["level_id"]
