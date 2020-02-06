@@ -1,5 +1,5 @@
 class UserCitySport < ApplicationRecord
   belongs_to :city_sport
   belongs_to :user
-  belongs_to :level_city_sport
+  has_and_belongs_to_many :level_city_sport
 end
