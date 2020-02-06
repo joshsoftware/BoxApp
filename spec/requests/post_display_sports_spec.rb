@@ -1,9 +1,9 @@
 require 'rails_helper'
 
-describe "post a question route", :type => :request do
+describe "post a token and display sports", :type => :request do
 
     before do
-        User.create(first_name: "mayur",last_name: "deshmukh",contact_number: 152,role: true,email: "mayur.deshmukh@joshware.com",city_id: 1)
+        FactoryBot.create(:user)
         Sport.create(name: "Badminton")
         City.create(name: "Pune")
         CitySport.create(city_id: 1, sport_id: 1, number_of_boxes: 5,number_of_players: 10)
