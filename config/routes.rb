@@ -1,12 +1,14 @@
+# frozen_string_literal: true
+
 Rails.application.routes.draw do
   # devise_for :users
   namespace :api do
     namespace :v1 do
-      devise_for :users #, :controllers => { registrations: 'registrations' }
-      resources :sessions, only: [:create, :destroy]
-      resource :user, only: [:show, :update, :create]
-      post '/setpwd', to: 'users#setpwd'
-      get 'confirm_link', to: 'mailers#confirm_link'
+      devise_for :users # , :controllers => { registrations: 'registrations' }
+      resources :sessions, only: %i[create destroy]
+      resource :user, only: %i[show update create]
+      post "/setpwd", to: "users#setpwd"
+      get "confirm_link", to: "mailers#confirm_link"
       # resources :confirmations, only: [:update, :show]
     end
   end

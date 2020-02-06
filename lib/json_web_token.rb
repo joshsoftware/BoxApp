@@ -1,7 +1,9 @@
-class JsonWebToken
-  SECRET_KEY = ENV['JWT_SECRET']
+# frozen_string_literal: true
 
-  def self.encode(payload, exp = 24.hours.from_now)
+class JsonWebToken
+  SECRET_KEY = ENV["JWT_SECRET"]
+
+  def self.encode(payload, exp=24.hours.from_now)
     payload[:exp] = exp.to_i
     puts SECRET_KEY
     JWT.encode(payload, SECRET_KEY)
