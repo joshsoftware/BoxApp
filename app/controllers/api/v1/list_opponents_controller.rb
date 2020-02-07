@@ -2,11 +2,8 @@ module Api
   module V1
     class Api::V1::ListOpponentsController < ApplicationController
       def opponents
-        @token = JsonWebToken.decode(params['token'])
-        @user_id = @token["user_id"]
-        @user = User.where(id: @user_id)
-        @city_id = @user.first.city_id
-        @user_id = @user.first.id
+        @city_id = @current_user.city_id
+        @user_id = @current_user.id
         @user_city_sport = UserCitySport.find_by(user_id: @user_id)
         @user_level_city_sports_id = @user_city_sport.level_city_sports_id
         @user_city_sport_id = @user_city_sport.city_sport_id
