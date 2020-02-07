@@ -39,8 +39,61 @@ levels = Level.create([
           {name: 'B1', description: 'Intermediate - Difficult'},
           {name: 'B2', description: 'Intermediate - Medium'},
           {name: 'B3', description: 'Intermediate - Easy'},
-          {name: 'C1', description: 'Intermediate - Difficult'},
-          {name: 'C2', description: 'Intermediate - Medium'},
-          {name: 'C3', description: 'Intermediate - Easy'}
+          {name: 'B4', description: 'Intermediate - Very Easy'},
+          {name: 'C1', description: 'Beginner - Difficult'},
+          {name: 'C2', description: 'Beginner - Medium'},
+          {name: 'C3', description: 'Beginner - Easy'},
+          {name: 'C4', description: 'Beginner - Very Easy'}
         ])
-        
+
+city_sports = CitySport.create([
+          {city_id: 1, sport_id: 1, number_of_boxes: 6, number_of_players: 5}
+          {city_id: 1, sport_id: 2, number_of_boxes: 6, number_of_players: 5}
+          {city_id: 1, sport_id: 3, number_of_boxes: 6, number_of_players: 5}
+          {city_id: 1, sport_id: 4, number_of_boxes: 6, number_of_players: 5}
+          {city_id: 2, sport_id: 2, number_of_boxes: 6, number_of_players: 5}
+          {city_id: 2, sport_id: 3, number_of_boxes: 6, number_of_players: 5}
+        ])
+
+level_city_sports = LevelCitySport.create([
+          {level_id: 1, city_sport_id: 1},
+          {level_id: 2, city_sport_id: 1},
+          {level_id: 3, city_sport_id: 1},
+          {level_id: 5, city_sport_id: 1},
+          {level_id: 6, city_sport_id: 1},
+          {level_id: 7, city_sport_id: 1},
+          {level_id: 1, city_sport_id: 2},
+          {level_id: 2, city_sport_id: 2},
+          {level_id: 3, city_sport_id: 2},
+          {level_id: 5, city_sport_id: 2},
+          {level_id: 6, city_sport_id: 2},
+          {level_id: 7, city_sport_id: 2},
+          {level_id: 1, city_sport_id: 3},
+          {level_id: 2, city_sport_id: 3},
+          {level_id: 3, city_sport_id: 3},
+          {level_id: 5, city_sport_id: 3},
+          {level_id: 6, city_sport_id: 3},
+          {level_id: 7, city_sport_id: 3},
+          {level_id: 1, city_sport_id: 4},
+          {level_id: 2, city_sport_id: 4},
+          {level_id: 3, city_sport_id: 4},
+          {level_id: 4, city_sport_id: 4},
+          {level_id: 5, city_sport_id: 4},
+          {level_id: 6, city_sport_id: 4},
+          {level_id: 7, city_sport_id: 4},
+          {level_id: 8, city_sport_id: 4},
+          {level_id: 1, city_sport_id: 5},
+          {level_id: 2, city_sport_id: 5},
+          {level_id: 3, city_sport_id: 5},
+          {level_id: 5, city_sport_id: 5},
+          {level_id: 6, city_sport_id: 5},
+          {level_id: 7, city_sport_id: 5},
+          {level_id: 1, city_sport_id: 6},
+          {level_id: 2, city_sport_id: 6},
+          {level_id: 3, city_sport_id: 6},
+          {level_id: 4, city_sport_id: 6},
+          {level_id: 5, city_sport_id: 6},
+          {level_id: 6, city_sport_id: 6},
+          {level_id: 7, city_sport_id: 6},
+          {level_id: 8, city_sport_id: 6},
+        ])
