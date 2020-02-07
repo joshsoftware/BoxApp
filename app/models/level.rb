@@ -1,7 +1,7 @@
 # frozen_string_literal: true
 
 class Level < ApplicationRecord
-  validates :name, :description, presence: true  
-  validates :name, uniqueness: true   
+  validates :name, :description, presence: true
+  validates :name, uniqueness: true
   has_many :level_city_sports
 end
