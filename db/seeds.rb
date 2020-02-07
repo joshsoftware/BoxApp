@@ -1,33 +1,37 @@
-# This file should contain all the record creation needed to seed the database with its default values.
-# The data can then be loaded with the rails db:seed command (or created alongside the database with db:setup).
+# frozen_string_literal: true
+
+# This file should contain all the record creation needed to seed the database with
+# its default values.
+# The data can then be loaded with the rails db:seed command (or created alongside the
+# database with db:setup).
 #
 # Examples:
 #
 #   movies = Movie.create([{ name: 'Star Wars' }, { name: 'Lord of the Rings' }])
 #   Character.create(name: 'Luke', movie: movies.first)
 
-cities = City.create([
-          {name: 'Pune'},
-          {name: 'Mumbai'},
-          {name: 'New Delhi'},
-          {name: 'Chennai'},
-          {name: 'Chandigarh'},
-          {name: 'Kolkata'},
-          {name: 'Gurgaon'},
-          {name: 'Noida'},
-          {name: 'Jaipur'},
-          {name: 'Bengaluru'},
-          {name: 'Navi Mumbai'},
-          {name: 'Hyderabad'},
-          {name: 'Ahmedabad'},
-          {name: 'Goa'},
-          {name: 'Nagpur'},
-          {name: 'Patna'},
-          {name: 'Lucknow'},
-          {name: 'Aizawl'}
-        ])
+City.create([
+              {name: "Pune"},
+              {name: "Mumbai"},
+              {name: "New Delhi"},
+              {name: "Chennai"},
+              {name: "Chandigarh"},
+              {name: "Kolkata"},
+              {name: "Gurgaon"},
+              {name: "Noida"},
+              {name: "Jaipur"},
+              {name: "Bengaluru"},
+              {name: "Navi Mumbai"},
+              {name: "Hyderabad"},
+              {name: "Ahmedabad"},
+              {name: "Goa"},
+              {name: "Nagpur"},
+              {name: "Patna"},
+              {name: "Lucknow"},
+              {name: "Aizawl"}
+            ])
 
-sports = Sport.create([
+Sport.create([
           {name: 'Badminton'},
           {name: 'Table Tennis'},
           {name: 'Squash'},
@@ -35,7 +39,7 @@ sports = Sport.create([
           {name: 'Racquetball'}
         ])
 
-levels = Level.create([
+Level.create([
           {name: 'B1', description: 'Intermediate - Difficult'},
           {name: 'B2', description: 'Intermediate - Medium'},
           {name: 'B3', description: 'Intermediate - Easy'},
@@ -46,7 +50,7 @@ levels = Level.create([
           {name: 'C4', description: 'Beginner - Very Easy'}
         ])
 
-city_sports = CitySport.create([
+CitySport.create([
           {city_id: 1, sport_id: 1, number_of_boxes: 6, number_of_players: 5}
           {city_id: 1, sport_id: 2, number_of_boxes: 6, number_of_players: 5}
           {city_id: 1, sport_id: 3, number_of_boxes: 6, number_of_players: 5}
@@ -55,7 +59,7 @@ city_sports = CitySport.create([
           {city_id: 2, sport_id: 3, number_of_boxes: 6, number_of_players: 5}
         ])
 
-level_city_sports = LevelCitySport.create([
+LevelCitySport.create([
           {level_id: 1, city_sport_id: 1},
           {level_id: 2, city_sport_id: 1},
           {level_id: 3, city_sport_id: 1},

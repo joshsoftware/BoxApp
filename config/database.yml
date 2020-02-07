@@ -57,9 +57,9 @@ development:
 # Do not set this db to the same as development or production.
 test:
   <<: *default
-  database: level_me_up_test
+  database: <%= ENV['TEST_DATABASE'] %>
   port: <%= ENV['POSTGRES_11_PORT'] %>
-  password: "123"
+  password: <%= ENV['TEST_DATABASE_PASSWORD'] %>
 # As with config/secrets.yml, you never want to store sensitive information,
 # like your database password, in your source code. If your source code is
 # ever seen by anyone, they now have access to your database.
@@ -81,6 +81,6 @@ test:
 #
 production:
   <<: *default
-  database: level_me_up_production
-  username: level_me_up
-  password: <%= ENV['LEVEL_ME_UP_DATABASE_PASSWORD'] %>
+  database: <%= ENV["PRODUCTION_DATABASE"] %>
+  username: <%= ENV["PRODUCTION_USERNAME"] %>
+  password: <%= ENV['PRODUCTION_PASSWORD'] %>

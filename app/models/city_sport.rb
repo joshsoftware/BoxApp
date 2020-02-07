@@ -1,3 +1,5 @@
+# frozen_string_literal: true
+
 class CitySport < ApplicationRecord
   belongs_to :city
   belongs_to :sport
