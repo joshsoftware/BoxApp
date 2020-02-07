@@ -34,3 +34,13 @@ sports = Sport.create([
           {name: 'Tennis'},
           {name: 'Racquetball'}
         ])
+
+levels = Level.create([
+          {name: 'B1', description: 'Intermediate - Difficult'},
+          {name: 'B2', description: 'Intermediate - Medium'},
+          {name: 'B3', description: 'Intermediate - Easy'},
+          {name: 'C1', description: 'Intermediate - Difficult'},
+          {name: 'C2', description: 'Intermediate - Medium'},
+          {name: 'C3', description: 'Intermediate - Easy'}
+        ])
+        
