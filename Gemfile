@@ -45,6 +45,10 @@ group :development do
   # Spring speeds up development by keeping your application running in the background. Read more: https://github.com/rails/spring
   gem 'spring'
   gem 'spring-watcher-listen', '~> 2.0.0'
+  #The Bullet gem is designed to increase the application's performance by reducing the number of queries it makes. Read more: https://github.com/flyerhzm/bullet
+  gem 'bullet'
+  #Brakeman is a static analysis tool which checks Ruby on Rails applications for security vulnerabilities. Read more: https://github.com/presidentbeef/brakeman
+  gem 'brakeman'
 end
 
 group :test do
