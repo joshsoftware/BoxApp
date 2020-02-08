@@ -7,7 +7,7 @@ describe "Confirmation Link", type: :request do
 
   it "redirects to set password page if email not confirmed" do
     get  "/api/v1/confirm_link?confirmation_token=#{@user.confirmation_token}"
-    response.should redirect_to "app://boxapp/setpassword?confirm=#{@user.confirmation_token}"
+    expect(response).to redirect_to("app://boxapp/setpassword?confirm=#{@user.confirmation_token}")
   end
 
   it "redirects to set intro page if email is already confirmed" do
@@ -20,6 +20,6 @@ describe "Confirmation Link", type: :request do
         }
       }
     get  "/api/v1/confirm_link?confirmation_token=#{@user.confirmation_token}"  
-    response.should redirect_to "app://boxapp/intro"
+    expect(response).to redirect_to("app://boxapp/intro")
   end
 end
