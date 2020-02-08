@@ -3,8 +3,7 @@
 class ApplicationController < ActionController::API
   before_action :configure_permitted_parameters, if: :devise_controller?
 
-  def
-   not_found
+  def not_found
     render json: {error: "not_found"}
   end
 
