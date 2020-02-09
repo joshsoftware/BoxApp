@@ -6,7 +6,6 @@ Metrics/MethodLength:
  Exclude:
    - "config/**/*.rb"
    - "db/migrate/*.rb"
-   # - "app/controllers/api/v1/registrations_controller.rb"
 
 Metrics/ClassLength:
  Max: 1000
@@ -124,7 +123,6 @@ Metrics/AbcSize:
  Exclude:
    - "config/**/*.rb"
    - "db/migrate/*.rb"
-   # - "app/controllers/api/v1/registrations_controller.rb"
 
 Style/RegexpLiteral:
  EnforcedStyle: "slashes"
