@@ -1,8 +1,9 @@
+# frozen_string_literal: true
+
 module Api
   module V1
     class UsersController < ApplicationController
-      def create
-      end
+      def create; end
 
       def set_password
         usr = params["user"]
@@ -15,10 +16,10 @@ module Api
           @user.save
           token = JsonWebToken.encode(user_id: @user.id)
           time = Time.now + 24.hours.to_i
-          render json: { token: token, exp: time.strftime("%m-%d-%Y %H:%M"),
-                         email: @user.email }, status: :ok
+          render json: {token: token, exp: time.strftime("%m-%d-%Y %H:%M"),
+                         email: @user.email}, status: :ok
         else
-          render json: { error: 'service unavailable' }, status: :service_unavailable
+          render json: {error: "service unavailable"}, status: :service_unavailable
         end
       end
     end
