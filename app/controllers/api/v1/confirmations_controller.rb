@@ -3,6 +3,8 @@
 module Api
   module V1
     class ConfirmationsController < Devise::ConfirmationsController
+      skip_before_action :validate_token, only: [:create]
+
       protected
 
       def after_confirmation_path_for(_resource_name, resource)

@@ -3,6 +3,7 @@
 module Api
   module V1
     class CitySportsController < ApplicationController
+      # skip_before_action :validate_token, only: [:displaysports]
       def displaysports
         city_id = @current_user.city_id
         sport_list = []

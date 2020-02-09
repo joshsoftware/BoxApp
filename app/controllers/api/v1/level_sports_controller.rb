@@ -3,6 +3,7 @@
 module Api
   module V1
     class LevelSportsController < ApplicationController
+      # skip_before_action :validate_token, only: [:create]
       def create
         city_id = @current_user.city_id
         sport_id = params["sport_id"]

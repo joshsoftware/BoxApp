@@ -3,6 +3,7 @@
 module Api
   module V1
     class RegistrationsController < Devise::RegistrationsController
+      skip_before_action :validate_token, only: [:create]
       include ActionController::Helpers
       include ActionController::Flash
       respond_to :json

@@ -3,6 +3,7 @@
 module Api
   module V1
     class UsersController < ApplicationController
+      skip_before_action :validate_token, only: %i[create set_password]
       def create; end
 
       def set_password

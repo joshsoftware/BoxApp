@@ -3,6 +3,7 @@
 module Api
   module V1
     class MailersController < ApplicationController
+      skip_before_action :validate_token, only: [:confirm_link]
       def confirm_link
         @token = request.params["confirmation_token"]
         @user = User.find_by(confirmation_token: @token)
