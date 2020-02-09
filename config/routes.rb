@@ -12,8 +12,8 @@ Rails.application.routes.draw do
       post "/level_sports", to: "level_sports#create"
       resources :levels
       resources :cities
+      get "/city_sports/display", to: "city_sports#displaysports"
       resources :city_sports
-      post "/city_sports/display", to: "city_sports#displaysports"
       # resources :confirmations, only: [:update, :show]
     end
   end
