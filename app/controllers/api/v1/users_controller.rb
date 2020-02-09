@@ -5,7 +5,7 @@ module Api
     class UsersController < ApplicationController
       def create; end
 
-      def setpwd
+      def set_password
         usr = params["user"]
         @user = User.find_by(confirmation_token: usr["confirmation_token"])
         @user.password = usr["password"]
