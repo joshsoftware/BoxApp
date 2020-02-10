@@ -3,6 +3,7 @@
 module Api
   module V1
     class SessionsController < ApplicationController
+      skip_before_action :validate_token, only: %i[create destroy]
       def create
         @user = User.find_by_email(params[:email])
         if @user&.valid_password?(params[:password])

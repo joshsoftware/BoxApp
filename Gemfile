@@ -53,9 +53,16 @@ end
 
 group :development do
   gem "listen", ">= 3.0.5", "< 3.2"
-  # Spring speeds up development by keeping your application running in the background. Read more: https://github.com/rails/spring
+  # Spring speeds up development by keeping your application running in the background.
+  # Read more: https://github.com/rails/spring
   gem "spring"
   gem "spring-watcher-listen", "~> 2.0.0"
+  # The Bullet gem is designed to increase the application's performance by reducing the
+  # number of queries it makes. Read more: https://github.com/flyerhzm/bullet
+  gem "bullet"
+  # Brakeman is a static analysis tool which checks Ruby on Rails applications for security
+  # vulnerabilities. Read more: https://github.com/presidentbeef/brakeman
+  gem "brakeman"
 end
 
 group :test do
@@ -72,3 +79,5 @@ gem "devise"
 gem "jwt"
 # Autoload dotenv in Rails.
 gem "dotenv-rails", "~> 2.7", ">= 2.7.5"
+# Easy and powerful exception tracking for Ruby
+gem "rollbar"

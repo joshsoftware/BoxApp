@@ -7,7 +7,7 @@ class User < ApplicationRecord
          :recoverable, :rememberable, :validatable, :confirmable
 
   validates :first_name, :last_name, :contact_number, :email, presence: true
-  # validates :contact_number, uniqueness: true, length: {is: 10}
+  validates :contact_number, uniqueness: true, length: {is: 10}
   validates :email,
             uniqueness: true,
             format:     {

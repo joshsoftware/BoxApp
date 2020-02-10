@@ -3,9 +3,10 @@
 module Api
   module V1
     class UsersController < ApplicationController
+      skip_before_action :validate_token, only: %i[create set_password]
       def create; end
 
-      def setpwd
+      def set_password
         usr = params["user"]
         @user = User.find_by(confirmation_token: usr["confirmation_token"])
         @user.password = usr["password"]
