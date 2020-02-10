@@ -4,19 +4,19 @@ require "rails_helper"
 
 describe "post a level and sport", type: :request do
   before do
-    FactoryBot.create(:user)
-    sport = Sport.create(name: "Badminton")
-    city = City.create(name: "Pune")
-    CitySport.create(city_id: city.id, sport_id: sport.id, number_of_boxes: 5, number_of_players: 10)
-    level = Level.create(name: "B1")
-    @token1 = "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ1c2VyX2lkIjoiMSJ9.O5Y5s_hvEW8BM7E8jq6HihxQ0DDFxO_2_xtnrvVj4PY"
+    @sport = Sport.create(name: "Badminton")
+    @city = City.create(name: "Pune")
+    @user = FactoryBot.create(:user, city_id: @city.id)
+    CitySport.create(city_id: @city.id, sport_id: @sport.id, number_of_boxes: 5, number_of_players: 10)
+    @level = Level.create(name: "B1")
+    @token1 = JsonWebToken.encode(user_id: @user.id)
     @token2 = "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ1c2VyX2lkIjoiMSJ9.O5Y5s_hvEW8BM7E8jq6HihxQ0DDFxO_2_xtnrvVj4PY"
     @token3 = "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ1c2VyX2lkIjoiMSJ9.O5Y5Y"
     post  "/api/v1/level_sports",
           headers: {"user-auth-token" => @token1},
           params:  {
-            sport_id: sport.id,
-            level_id: level.id
+            sport_id: @sport.id,
+            level_id: @level.id
           }
   end
 

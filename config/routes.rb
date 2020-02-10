@@ -13,6 +13,7 @@ Rails.application.routes.draw do
       resources :cities
       get "/city_sports/display", to: "city_sports#displaysports"
       resources :city_sports
+      get "/list_opponents", to: "list_opponents#opponents"
       # resources :confirmations, only: [:update, :show]
     end
   end

@@ -7,9 +7,9 @@ class ApplicationController < ActionController::API
     user_auth_token = request.headers["user-auth-token"]
     @current_user = current_user(user_auth_token)
   rescue JWT::DecodeError => e
-    render json: {error: "Unauthorized", err: e}, status: :unauthorized
+    render json: {error: e.message}, status: :unauthorized
   rescue ActiveRecord::RecordNotFound => e
-    render json: {error: "Unauthorized", err: e}, status: :unauthorized
+    render json: {error: e.message}, status: :unauthorized
   end
 
   def current_user(user_auth_token)

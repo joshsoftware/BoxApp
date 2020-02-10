@@ -4,11 +4,11 @@ require "rails_helper"
 
 describe "should display sports", type: :request do
   before do
-    FactoryBot.create(:user)
-    Sport.create(name: "Badminton")
-    City.create(name: "Pune")
-    CitySport.create(city_id: 1, sport_id: 1, number_of_boxes: 5, number_of_players: 10)
-    @token1 = "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ1c2VyX2lkIjoiMSJ9.O5Y5s_hvEW8BM7E8jq6HihxQ0DDFxO_2_xtnrvVj4PY"
+    @sport = Sport.create(name: "Badminton")
+    @city = City.create(name: "Pune")
+    @user = FactoryBot.create(:user, city_id: @city.id)
+    @cs = CitySport.create(city_id: @city.id, sport_id: @sport.id, number_of_boxes: 5, number_of_players: 10)
+    @token1 = JsonWebToken.encode(user_id: @user.id)
     @token2 = "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ1c2VyX2lkIjoiOCJ9.9V492uKokeLSu9F62ck-CX2XvrquAsTNc9_agkPcYzk"
     @token3 = "eyJhbGciOiJIUzI1NiIsInR5cuKokeLSu9F62ck-CX2XvrquAsTNc9_agkPcYzk"
     get "/api/v1/city_sports/display",
