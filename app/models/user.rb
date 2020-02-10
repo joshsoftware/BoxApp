@@ -11,7 +11,7 @@ class User < ApplicationRecord
   validates :email,
             uniqueness: true,
             format:     {
-              with:    /\A[a-zA-Z0-9]+[._]*[a-zA-Z0-9]*['@'][a-zA-Z]+[.][a-zA-Z]+\Z/,
+              with:  /\A([\w+\-].?)+@[a-z\d\-]+(\.[a-z]+)*\.[a-z]+\z/i, 
               message: "invalid format"
             }
 
