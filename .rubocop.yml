@@ -1,8 +1,8 @@
 Layout/LineLength:
- Max: 100
+ Max: 125
 
 Metrics/MethodLength:
- Max: 15
+ Max: 35
  Exclude:
    - "config/**/*.rb"
    - "db/migrate/*.rb"
@@ -24,6 +24,7 @@ Metrics/BlockLength:
    - "db/migrate/*.rb"
    - "db/schema.rb"
    - "spec/factories/**/*.rb"
+   - "spec/requests/*.rb"
    - "app/admin/*.rb"
    - "app/admin/**/*.rb"
 
@@ -117,7 +118,7 @@ Metrics/PerceivedComplexity:
  Severity: warning
 
 Metrics/AbcSize:
- Max: 35
+ Max: 45
  Severity: warning
  Exclude:
    - "config/**/*.rb"
