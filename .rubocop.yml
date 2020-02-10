@@ -24,6 +24,7 @@ Metrics/BlockLength:
    - "db/migrate/*.rb"
    - "db/schema.rb"
    - "spec/factories/**/*.rb"
+   - "spec/requests/*.rb"
    - "app/admin/*.rb"
    - "app/admin/**/*.rb"
 
