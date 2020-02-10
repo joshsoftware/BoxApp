@@ -9,6 +9,7 @@ Rails.application.routes.draw do
       post "/set_password", to: "users#set_password"
       get "confirm_link", to: "mailers#confirm_link"
       post "/level_sports", to: "level_sports#create"
+      post "/city_sport_levels", to: "levels#all_levels"
       resources :levels
       resources :cities
       get "/city_sports/display", to: "city_sports#displaysports"
