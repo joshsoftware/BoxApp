@@ -26,14 +26,11 @@ module Api
         end
 
 
-        puts "Opponents #{opponents}"
+        puts "Opponents #{opponents}  "
         opponent_count = opponents.size
 
-        if opponent_count < 4
-          render json: {count: opponent_count}
-        else
-          render json: opponents.as_json
-        end
+        render json: opponents.as_json
+        
       end
     end
   end
