@@ -7,7 +7,9 @@ class User < ApplicationRecord
   has_many :user_city_sports
   validates_associated :matches, :user_city_sports
 
-  before_save do
+  before_save :titleize
+  
+  def titleize
     self.first_name = self.first_name.titleize
     self.last_name = self.last_name.titleize
   end
