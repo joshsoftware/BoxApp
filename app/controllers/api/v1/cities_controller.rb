@@ -10,7 +10,7 @@ module Api
   module V1
     class CitiesController < ApplicationController
       def index
-        render json: City.all.as_json
+        render json: City.all.order(:name).as_json
       end
     end
   end
