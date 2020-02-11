@@ -1,3 +1,5 @@
+# frozen_string_literal: true
+
 class Level < ApplicationRecord
   validates :name, :description, presence: true
   validates :name, uniqueness: true
