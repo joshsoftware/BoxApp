@@ -1,7 +1,5 @@
 Layout/LineLength:
- Max: 100
- Exclude:
-   - "app/controllers/api/v1/levels_controller.rb"
+ Max: 125
 
 Metrics/MethodLength:
  Max: 15
