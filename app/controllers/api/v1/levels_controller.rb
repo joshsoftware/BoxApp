@@ -12,16 +12,7 @@ module Api
         city_id = @current_user.city_id
         sport_id = params["sport_id"]
         city_sport = CitySport.find_by(city_id: city_id, sport_id: sport_id)
-        level_list = []
-        level_city_sports = LevelCitySport.where(city_sport_id: city_sport.id)
-        level_city_sports.find_each do |level|
-          level_obj = Level.find_by(id: level.level_id)
-          number_of_players = UserCitySport.where(level_city_sports_id: level.id).count
-          level_hash = {"name"        => level_obj.name,
-                        "description" => level_obj.description,
-                        "count"       => city_sport.number_of_players - number_of_players}
-          level_list.append(level_hash)
-        end
+        level_list = LevelCitySport.select("level_city_sports.id as id, levels.name as name, levels.description as description, #{city_sport.number_of_players} - (SELECT COUNT(*) FROM user_city_sports WHERE user_city_sports.level_city_sports_id = level_city_sports.id) as free_slots").joins(:city_sport, :level, "LEFT JOIN user_city_sports ON user_city_sports.level_city_sports_id = level_city_sports.id").where(city_sport_id: 1).uniq
         render json: level_list.as_json
       end
     end
