@@ -22,7 +22,7 @@ describe "levels in a sport for a city", type: :request do
                                    sport_id:          @sport1.id,
                                    number_of_boxes:   6,
                                    number_of_players: 5)
-    @level1 = Level.create(name: "B1")
+    @level1 = Level.create(name: "B1", description: "Intermediate - Difficult")
     @levelcitysport1 = LevelCitySport.create(city_sport_id: @citysport1.id,
                                              level_id:      @level1.id)
     @usercitysport1 = UserCitySport.create(user_id:              @user1.id,
