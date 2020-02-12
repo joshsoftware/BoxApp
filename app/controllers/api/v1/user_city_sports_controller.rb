@@ -4,11 +4,7 @@ module Api
   module V1
     class UserCitySportsController < ApplicationController
       def index
-        puts "user id---------#{@current_user.id}"
-        usc = UserCitySport.all
-        puts  "all usc #{usc.as_json}"
         user_city_sport = UserCitySport.find_by(user_id: @current_user.id)
-        # puts "usc ------ #{user_city_sport.id}"
         if user_city_sport
           user_city_sport_hash = {id:                   user_city_sport.id,
                                   city_sport_id:        user_city_sport.city_sport_id,
