@@ -24,12 +24,12 @@ module Api
             ).where(id: id)
           end
         end
+        opponents_size = opponents.size
+        citysport = CitySport.find_by(id: user_city_sport_id)
+        no_of_players = citysport.number_of_players
+        free_slots = no_of_players - opponents_size - 1
 
-
-        puts "Opponents #{opponents}  "
-        opponent_count = opponents.size
-
-        render json: opponents.as_json
+      render json: {"opponents" => opponents.as_json, "free_slots" => free_slots}
         
       end
     end
