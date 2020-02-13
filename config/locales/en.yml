@@ -31,3 +31,6 @@
 
 en:
   hello: "Hello world"
+  city_sports:
+    sport_list_empty: "Cannot fetch Sports"
+    id_not_found: "Id not found"
