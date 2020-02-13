@@ -9,9 +9,7 @@ module Api
         sport_id = params["sport_id"]
         city_sport_id = CitySport.find_by(city_id: city_id, sport_id: sport_id)
         level_id = params["level_id"]
-        puts "Level id : #{level_id}"
         level_city_sports = LevelCitySport.where(city_sport_id: city_sport_id.id, level_id: level_id)
-        puts {"level city sport #{level_city_sports}"}
         UserCitySport.create(user_id:              @current_user.id,
                              city_sport_id:        city_sport_id.id,
                              level_city_sports_id: level_city_sports.ids[0])
