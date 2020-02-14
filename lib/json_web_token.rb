@@ -7,15 +7,15 @@ class JsonWebToken
     payload[:exp] = exp.to_i
     begin
       JWT.encode(payload, SECRET_KEY)
-    rescue JWT::EncodeError => e
+    rescue JWT::EncodeError
       nil
     end
   end
 
   def self.decode(token)
     begin
-    decoded = JWT.decode(token, SECRET_KEY)[0]
-    rescue JWT::DecodeError => e
+      decoded = JWT.decode(token, SECRET_KEY)[0]
+    rescue JWT::DecodeErro
       nil
     end
     HashWithIndifferentAccess.new decoded
