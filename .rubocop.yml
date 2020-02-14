@@ -1,5 +1,5 @@
 Layout/LineLength:
- Max: 100
+ Max: 125
 
 Metrics/MethodLength:
  Max: 15
@@ -26,6 +26,7 @@ Metrics/BlockLength:
    - "spec/factories/**/*.rb"
    - "app/admin/*.rb"
    - "app/admin/**/*.rb"
+   - "./spec/requests/*"
 
 Layout/SpaceAroundEqualsInParameterDefault:
  Exclude:
