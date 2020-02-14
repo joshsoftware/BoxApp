@@ -34,3 +34,10 @@ en:
   city_sports:
     sport_list_empty: "Cannot fetch Sports"
     id_not_found: "Id not found"
+  jwt_error:
+    invalid_jwt: "Invalid JWT Token"
+  user_city_sports:
+    create:
+      id_not_found: "Invalid ID"
+      created_sucessfully: "created"
+      create_failed: "validation failed record not created"

@@ -9,12 +9,12 @@ class ApplicationController < ActionController::API
   end
 
   def current_user(user_auth_token)
+    token = JsonWebToken.decode(user_auth_token)
+    return render json: {error: I18n.t("jwt_error.invalid_jwt")}, status: :unauthorized if token.empty?
+
     begin
-      token = JsonWebToken.decode(user_auth_token)
       user_id = token["user_id"]
       user = User.find(user_id)
-    rescue JWT::DecodeError => e
-      render json: {error: e.message}, status: :unauthorized
     rescue ActiveRecord::RecordNotFound => e
       render json: {error: e.message}, status: :unauthorized
     end
