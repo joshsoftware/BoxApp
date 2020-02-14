@@ -34,4 +34,10 @@ en:
   list_opponents:
     id_not_found: "Id not found"
     opponents_not_found: "could not fetch opponents"
-
+  jwt_error:
+    invalid_jwt: "Invalid JWT Token"
+  user_city_sports:
+    create:
+      id_not_found: "Invalid ID"
+      created_sucessfully: "created"
+      create_failed: "validation failed record not created"

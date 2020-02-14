@@ -27,6 +27,7 @@ Metrics/BlockLength:
    - "spec/requests/*.rb"
    - "app/admin/*.rb"
    - "app/admin/**/*.rb"
+   - "./spec/requests/*"
 
 Layout/SpaceAroundEqualsInParameterDefault:
  Exclude:
