@@ -5,6 +5,7 @@ Rails.application.routes.draw do
     namespace :v1 do
       post "/city_sport_levels", to: "levels#all_levels"
       resources :levels
+      post "/level_sports", to: "level_sports#create"
     end
   end
 end
