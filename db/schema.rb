@@ -2,15 +2,15 @@
 # of editing this file, please use the migrations feature of Active Record to
 # incrementally modify your database, and then regenerate this schema definition.
 #
-# Note that this schema.rb definition is the authoritative source for your
-# database schema. If you need to create the application database on another
-# system, you should be using db:schema:load, not running all the migrations
-# from scratch. The latter is a flawed and unsustainable approach (the more migrations
-# you'll amass, the slower it'll run and the greater likelihood for issues).
+# This file is the source Rails uses to define your schema when running `rails
+# db:schema:load`. When creating a new database, `rails db:schema:load` tends to
+# be faster and is potentially less error prone than running all of your
+# migrations from scratch. Old migrations may fail to apply correctly if those
+# migrations use external dependencies or application code.
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 2020_01_24_081550) do
+ActiveRecord::Schema.define(version: 2020_02_11_062201) do
 
   # These are extensions that must be enabled in order to support this database
   enable_extension "plpgsql"
@@ -41,10 +41,18 @@ ActiveRecord::Schema.define(version: 2020_01_24_081550) do
     t.index ["level_id"], name: "index_level_city_sports_on_level_id"
   end
 
+  create_table "level_city_sports_user_city_sports", id: false, force: :cascade do |t|
+    t.bigint "level_city_sport_id"
+    t.bigint "user_city_sport_id"
+    t.index ["level_city_sport_id"], name: "index_level_city_sports_user_city_sports_on_level_city_sport_id"
+    t.index ["user_city_sport_id"], name: "index_level_city_sports_user_city_sports_on_user_city_sport_id"
+  end
+
   create_table "levels", force: :cascade do |t|
     t.string "name"
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
+    t.string "description"
   end
 
   create_table "matches", force: :cascade do |t|
@@ -87,14 +95,23 @@ ActiveRecord::Schema.define(version: 2020_01_24_081550) do
   create_table "users", force: :cascade do |t|
     t.string "first_name"
     t.string "last_name"
-    t.integer "contact_number"
-    t.boolean "role"
-    t.string "email"
-    t.string "password"
+    t.string "contact_number"
+    t.boolean "is_admin"
     t.bigint "city_id"
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
+    t.string "email", default: "", null: false
+    t.string "encrypted_password", default: "", null: false
+    t.string "reset_password_token"
+    t.datetime "reset_password_sent_at"
+    t.datetime "remember_created_at"
+    t.string "confirmation_token"
+    t.datetime "confirmed_at"
+    t.datetime "confirmation_sent_at"
     t.index ["city_id"], name: "index_users_on_city_id"
+    t.index ["confirmation_token"], name: "index_users_on_confirmation_token", unique: true
+    t.index ["email"], name: "index_users_on_email", unique: true
+    t.index ["reset_password_token"], name: "index_users_on_reset_password_token", unique: true
   end
 
   add_foreign_key "user_city_sports", "level_city_sports", column: "level_city_sports_id"
