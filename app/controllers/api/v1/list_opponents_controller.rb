@@ -29,8 +29,7 @@ module Api
         no_of_players = citysport.number_of_players
         free_slots = no_of_players - opponents_size - 1
 
-      render json: {"opponents" => opponents.as_json, "free_slots" => free_slots}
-        
+        render json: {"opponents" => opponents.as_json, "free_slots" => free_slots}
       end
     end
   end

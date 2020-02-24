@@ -123,7 +123,7 @@ CitySport.create([
                    {city_id: 18, sport_id: 2, number_of_boxes: 6, number_of_players: 5},
                    {city_id: 18, sport_id: 3, number_of_boxes: 6, number_of_players: 5},
                    {city_id: 18, sport_id: 4, number_of_boxes: 6, number_of_players: 5}
-                  ])
+                 ])
 
 LevelCitySport.create([
                         {level_id: 1, city_sport_id: 1},

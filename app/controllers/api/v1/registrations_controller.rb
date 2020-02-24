@@ -30,7 +30,7 @@ module Api
               @url = ["http://192.168.1.84:3000/api/v1/",
                       "confirm_link?confirmation_token=#{resource.confirmation_token}"]
               render json:   {message: msg,
-                              url:     @url[0]+@url[1]},
+                              url:     @url[0] + @url[1]},
                      status: 200
               return
             end

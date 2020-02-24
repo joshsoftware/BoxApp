@@ -13,7 +13,7 @@ module Api
         UserCitySport.create(user_id:              @current_user.id,
                              city_sport_id:        city_sport_id.id,
                              level_city_sports_id: level_city_sports.ids[0])
-        render json: {message: "Sport and Level selected successfully"},status: 200
+        render json: {message: "Sport and Level selected successfully"}, status: 200
       end
     end
   end

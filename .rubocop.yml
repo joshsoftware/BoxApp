@@ -120,7 +120,7 @@ Metrics/PerceivedComplexity:
  Severity: warning
 
 Metrics/AbcSize:
- Max: 45
+ Max: 60
  Severity: warning
  Exclude:
    - "config/**/*.rb"

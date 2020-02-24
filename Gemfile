@@ -49,6 +49,8 @@ group :development, :test do
   gem "rspec", "~> 3.9"
   # A testing framework for Rails 3+.
   gem "rspec-rails", "~> 3.9"
+
+  gem "whenever"
 end
 
 group :development do
