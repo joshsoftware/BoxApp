@@ -34,6 +34,10 @@ en:
   city_sports:
     sport_list_empty: "Cannot fetch Sports"
     id_not_found: "Id not found"
+  levels:
+    id_not_found: "Id not found"
+    city_sports_not_found: "could not fetch city sports"
+    levels_not_found: "could not fetch levels"
   jwt_error:
     invalid_jwt: "Invalid JWT Token"
   user_city_sports:
