@@ -22,9 +22,7 @@ module Api
               return
             end
           else
-            if is_flashing_format?
-              set_flash_message :notice, :"signed_up_but_#{resource.inactive_message}"
-            end
+            set_flash_message :notice, :"signed_up_but_#{resource.inactive_message}" if is_flashing_format?
             msg = find_message(:"signed_up_but_#{resource.inactive_message}", {})
             expire_data_after_sign_in!
             respond_with(resource) do |_format|
