@@ -19,7 +19,7 @@ module Api
           render json: {token: token, exp: time.strftime("%m-%d-%Y %H:%M"),
                          email: @user.email}, status: :ok
         else
-          render json: {error: "service unavailable"}, status: :service_unavailable
+          render json: {error: I18n.t("users.service_unavailable")}, status: :service_unavailable
         end
       end
     end
