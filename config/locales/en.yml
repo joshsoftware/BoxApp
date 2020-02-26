@@ -31,3 +31,14 @@
 
 en:
   hello: "Hello world"
+  levels:
+    id_not_found: "Id not found"
+    city_sports_not_found: "could not fetch city sports"
+    levels_not_found: "could not fetch levels"
+  jwt_error:
+    invalid_jwt: "Invalid JWT Token"
+  user_city_sports:
+    create:
+      id_not_found: "Invalid ID"
+      created_sucessfully: "created"
+      create_failed: "validation failed record not created"
