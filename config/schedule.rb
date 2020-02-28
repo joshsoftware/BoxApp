@@ -10,7 +10,7 @@ end
 
 
 #for particular time
-# 1.day, at: '4:30 am
+# 1.day, at: '4:30 am'
 
 
 #for  first day of every month at midnight

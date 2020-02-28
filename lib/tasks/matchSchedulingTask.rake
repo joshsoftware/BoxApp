@@ -1,6 +1,7 @@
 
 namespace :match_scheduling do
     task matches: :environment  do
+      Match.destroy_all
       all_users = User.all 
         all_users.each do |u|
             user_id = u.id
