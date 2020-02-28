@@ -32,3 +32,5 @@ coverage/*
 /config/credentials/production.key
 
 /config/credentials/staging.key
+
+.rake_tasks~
