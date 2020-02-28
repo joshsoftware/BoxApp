@@ -11,8 +11,6 @@ describe "get all levels", type: :request do
     expect(response).to have_http_status(:success)
   end
 end
-<<<<<<< HEAD
-=======
 
 describe "levels in a sport for a city", type: :request do
   before do
@@ -42,4 +40,3 @@ describe "levels in a sport for a city", type: :request do
     expect(response).to have_http_status(:ok)
   end
 end
->>>>>>> 9cd8e4b91111e90c900f5e4a9c236270d5490b03
