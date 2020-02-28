@@ -26,3 +26,11 @@
 /config/master.key
 # /config/database.yml
 coverage/*
+
+/config/credentials/development.key
+
+/config/credentials/production.key
+
+/config/credentials/staging.key
+
+.rake_tasks~

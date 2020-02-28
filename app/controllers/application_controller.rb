@@ -20,4 +20,5 @@ class ApplicationController < ActionController::API
     end
     user
   end
+  end
 end
