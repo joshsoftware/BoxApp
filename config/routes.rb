@@ -7,7 +7,7 @@ Rails.application.routes.draw do
       get "/city_sport_levels", to: "levels#all_levels"
       resources :levels
       post "/level_sports", to: "level_sports#create"
-      resources :cities
+      resources :cities, only: [:index]
     end
   end
 end
