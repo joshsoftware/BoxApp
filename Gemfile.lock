@@ -58,6 +58,7 @@ GEM
       zeitwerk (~> 2.2)
     ast (2.4.0)
     bcrypt (3.1.13)
+      zeitwerk (~> 2.2)
     bootsnap (1.4.5)
       msgpack (~> 1.0)
     brakeman (4.7.2)

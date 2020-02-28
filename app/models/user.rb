@@ -1,6 +1,11 @@
 # frozen_string_literal: true
 
 class User < ApplicationRecord
+  # Include default devise modules. Others available are:
+  # :confirmable, :lockable, :timeoutable, :trackable and :omniauthable
+  devise :database_authenticatable, :registerable,
+         :recoverable, :rememberable, :validatable, :confirmable
+
   validates :first_name, :last_name, :contact_number, :email, presence: true
   validates :contact_number, uniqueness: true, length: {is: 10}
   validates :email,
@@ -17,5 +22,11 @@ class User < ApplicationRecord
   def titleize_names
     self.first_name = first_name.titleize
     self.last_name = last_name.titleize
+  end
+
+  protected
+
+  def password_required?
+    confirmed? ? super : false
   end
 end

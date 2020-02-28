@@ -45,3 +45,7 @@ en:
       id_not_found: "Invalid ID"
       created_sucessfully: "created"
       create_failed: "validation failed record not created"
+  users:
+    service_unavailable: "Service unavailable"
+  sessions:
+    unauthorized: "unauthorized"
