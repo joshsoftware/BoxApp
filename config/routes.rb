@@ -4,7 +4,6 @@ Rails.application.routes.draw do
   # devise_for :users
   namespace :api do
     namespace :v1 do
-<<<<<<< HEAD
       devise_for :users # , :controllers => { registrations: 'registrations' }
       resources :sessions, only: %i[create destroy]
       resource :user, only: %i[show update create]
@@ -16,11 +15,8 @@ Rails.application.routes.draw do
       resources :city_sports
       post "/city_sports/display", to: "city_sports#displaysports"
       # resources :confirmations, only: [:update, :show]
-=======
+      get "/list_opponents", to: "list_opponents#opponents"
       get "/city_sport_levels", to: "levels#all_levels"
-      resources :levels
-      post "/level_sports", to: "level_sports#create"
->>>>>>> 9cd8e4b91111e90c900f5e4a9c236270d5490b03
     end
   end
   # For details on the DSL available within this file, see http://guides.rubyonrails.org/routing.html

@@ -31,6 +31,9 @@
 
 en:
   hello: "Hello world"
+  list_opponents:
+    id_not_found: "User id not found"
+    opponents_not_found: "could not fetch opponents"
   levels:
     id_not_found: "Id not found"
     city_sports_not_found: "could not fetch city sports"
